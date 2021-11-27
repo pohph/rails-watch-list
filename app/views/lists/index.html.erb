@@ -1,0 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80);)">
+  <div class = "container">
+      <h1 class = "text-center">All Movies</h1>
+      <p class = "text-center">Enjoy the show</p>
+  </div>
+</div>
+
+
+
+ <div class="card-container">
+      <% @lists.each do |list| %>
+      <div class="card">
+        <img src="https://source.unsplash.com/1600x900/?nba,<%= list.name %> logo" class="card-img-top" alt="<%= list.name %> logo">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to list.name, list_path(list)  %></h5>
+          <button type="button" class="btn btn-primary"><i class="far fa-heart"></i></button>
+        </div>
+      </div>
+      <% end %>
+    </div>
+<%= link_to "New List", new_list_path %>

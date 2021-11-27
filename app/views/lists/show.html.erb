@@ -1,0 +1,11 @@
+<h1>Show Movie</h1>
+
+
+<%= link_to "Add Bookmark", new_list_bookmark_path(@list)%>
+
+<%= @list.movies.each do |movie|%>
+  <%= movie.title %>
+  <% @bookmark = Bookmark.find_by_movie_id(movie.id) %>
+  <%= image_tag @list.movies.first.poster_url%>
+
+<% end %>
